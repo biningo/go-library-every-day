@@ -13,7 +13,7 @@ import (
 
 //sync.Pool
 //并发安全
-func Demo1() {
+func DemoPool1() {
 	type Stu struct {
 		Name string
 		Age  int16
@@ -58,5 +58,5 @@ func Demo1() {
 }
 
 func main() {
-	Demo1()
+	DemoPool1()
 }
