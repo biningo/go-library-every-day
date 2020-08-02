@@ -12,7 +12,7 @@ import (
 **/
 
 //sync.Pool
-
+//并发安全
 func Demo1() {
 	type Stu struct {
 		Name string
@@ -20,7 +20,7 @@ func Demo1() {
 	}
 
 	stuPool := sync.Pool{}
-	stuPool.New = func() interface{} { //get时返回的对象
+	stuPool.New = func() interface{} { //当pool没有对象时调用此方法返回
 		return Stu{Name: "None"}
 	}
 
