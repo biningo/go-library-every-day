@@ -25,6 +25,18 @@ func LoggerNewDemo(){
 	//logger.Writer().Write([]byte("今天，多云，心情：好")) 可以直接操作Writer
 }
 
+
+//2.给Logger实现一个接口
+func InterfaceDemo()  {
+	logger:=MyLogger(log.New(os.Stdout,"【MyPrefix】",log.Ltime))
+	logger.Println("限制接口")
+}
+
+type MyLogger interface {
+	Println( ...interface{}) //方法签名必须一致
+}
+
 func main() {
 	//LoggerNewDemo()
+	InterfaceDemo()
 }
